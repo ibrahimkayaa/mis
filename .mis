@@ -214,8 +214,8 @@ function go(){
 		command cd /c/$2
 		printf "Now you are in /c/$2"
 	else
-		command $1
-		printf "Now you are in $2"
+		command cd $1
+		printf "Now you are in $1"
 	fi
 }
 
