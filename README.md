@@ -56,18 +56,35 @@ We have also ;
 
 
 Let's compare , and look at other commands ; 
-- $ list  : 
+
+- $ list  : List the directory
 - - desk  : $ list desk vs $ ls ~/Desktop
 - - home  : $ list home vs $ ls ~/        
 - - nav   : $ list nav  vs $ ls /c
-- $ go    : 
+- $ go    : Go to the directory
 - - desk  : $ go desk   vs $ cd ~/Desktop
 - - home  : $ go home   vs $ cd ~/
 - - nav   : $ go nav    vs $ cs /c
-- $ cargo : 
+- $ cargo : Create a directory and go in it
 - - desk  : $ cargo desk newFolder  vs $ cd ~/Dekstop && mkdir newFolder && cd $_
-- $ fob   : 
+- $ fob   : Create a file and open it up
 - - desk  : $ fob desk newfile.type vs $ touch newfile.type && start $_
-- $ file  : Usage;
+- $ file  : Create a file only
 - - $ file newFile.type vs $ touch newFile.type
+- $ sdir  : Search Directory
+- - desk  : $ sdir desk folder cs $ cd ~/Desktop && find folder 
+- $ sname : Search a file with name 
+- - desk  : $ sname dir fileName cs $ cd ~/Desktop && find -name 'fileName.*'
+- $ stype : Search file with type
+- - excel : $ stype excel vs $ find -name '*.xlxs'
+- - word  : $ stype word  vs $ find -name '*.docx' ( you can use it with different file types ; js , html , css , json , pdf , png , jpg , jpeg ,fbx ,cs ,h ,m ,txt ...etc
+- $ up    : One directory up / Back
+- -       : $ up vs $ cd .. 
+
+And also we have some fun parts
+
+- $ google  : You can search everything with google
+- - Try     : google What is the capital city of Turkey 
+- $ sgoogle : Same as google command but it opens google incognito mode
+
 
