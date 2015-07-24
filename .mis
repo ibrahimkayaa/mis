@@ -1,0 +1,275 @@
+#.mis ( Make it Simple ) author ibrahim kaya 2015
+
+function whatismis(){
+	printf "Make it Simple : An alternative and simple bash commands
+		 Just like speaking native"
+}
+
+function up(){
+	command cd ..
+}
+
+function openmis(){
+	command cd ~/
+	command start .mis
+}
+
+function openbash(){
+	command cd ~/
+	command start .bashrc
+}
+
+function boiler(){
+	if [[ ! $1 ]]; then
+		#statements
+		echo "Please identify the git repo after boiler command"
+	else
+		command git clone https://github.com/$1.git
+	fi
+}
+
+function google(){
+	if [[ ! $1 ]]; 
+		then
+		command start wwww.google.com
+	else
+		command start www.google.com/search?q=$1+$2+$3+$4+$5+$6+$7+$8+$9
+	fi
+}
+
+function sgoogle(){
+	if [[ ! $1 ]]; 
+		then
+		command /c/Program\ Files\ \(x86\)\/Google/Chorme/Application/chrome.exe www.google.com --incognito
+	else
+		command /c/Program\ Files\ \(x86\)\/Google/Chorme/Application/chrome.exe www.google.com/search?q=$1+$2+$3+$4+$5+$6+$7+$8+$9 --incognito
+	fi
+}
+
+function file(){
+	if [[ ! $1 ]]; 
+		then
+		echo "created file default.txt"
+		command touch default.txt
+	else
+		echo "created $1 file"
+		command touch $1
+	fi
+}
+
+function cargo(){
+	if [[ $1 = "desk" ]]; 
+		then
+		command cd ~/Desktop
+		if [[ ! $2 ]]; 
+			then
+			command mkdir default && cd default
+			echo "created default directory on Desktop"
+		else
+			command mkdir $2 && cd $2
+			echo "created $2 directory on Desktop"
+		fi
+	else
+		if [[ ! $1 ]]; 
+			then
+			command mkdir default && cd default
+			echo "created default directory on current directory"
+		else
+			command mkdir $1 && cd $1
+			echo "created $1 directory on current directory"
+		fi
+	fi
+}
+
+function fob(){
+	if [[ $1 = "desk" ]]; 
+		then
+		command cd ~/Desktop
+		if [[ ! $2 ]]; 
+			then
+			command touch default.txt && start default.txt
+			echo "created default.txt file on Desktop"
+		else
+			command touch $2 && start $2
+			echo "created $2 file on Desktop"
+		fi
+	else
+		if [[ ! $1 ]]; 
+			then
+			command touch default.txt && start default.txt
+			echo "created default.txt file on Desktop"
+		else
+			command touch $1 && start $1
+			echo "created $1 file on Desktop"
+		fi
+	fi
+}
+
+function sname(){
+	if [[ $1 = "desk" ]]; 
+		then
+		command cd ~/Desktop
+		local scope=$2.*
+		if [[ ! $scope ]]; 
+			then
+			echo "please identify the name of directory or file"
+		else
+			printf "Result of search :\n"
+			command find -name $scope
+		fi
+	else
+		if [[ ! $1 ]]; 
+			then
+			echo "Please identify the name of directory or file"
+		else
+			printf "Result of search :\n"
+			command find -name $1.*
+		fi
+	fi
+}
+
+function sdir(){
+	if [[ $1 = "desk" ]]; 
+		then
+		command cd ~/Desktop
+		if [[ ! $2 ]]; 
+			then
+			echo "please identify the name of the directory"
+		else
+			command find $2
+		fi
+	else
+		if [[ ! $1 ]]; 
+			then
+			echo "please identify the name of the directory"
+		else
+			command find $1
+		fi
+	fi
+}
+
+function stype(){
+
+	local scope=$1
+	local sc=*.$scope
+
+	if [[ $scope = "html" ]]; 
+		then
+		command find -name '*.html'
+	elif [[ $scope = "js" ]]; 
+		then
+		command find -name '*.js'
+	elif [[ $scope = "css" ]]; 
+		then
+		command find -name '*.css'
+	elif [[ $scope = "cs" ]]; 
+		then
+		command find -name '*.cs'
+	elif [[ $scope = "json" ]]; 
+		then
+		command find -name '*.json'
+	elif [[ $scope = "png" ]]; 
+		then
+		command find -name '*.png'
+	elif [[ $scope = "jpg" || $scope = 'jpeg' ]]; 
+		then
+		command find -name '*.jpg' || find -name '*.jpeg'
+ 	elif [[ $scope = "h" ]]; 
+ 		then
+ 		command find -name '*.h'
+ 	elif [[ $scope = "m" ]]; 
+ 		then
+ 		command find -name '*.m'
+ 	elif [[ $scope = "fbx" ]]; 
+ 		then
+ 		command find -name '*.fbx'
+ 	elif [[ $scope = "excel" ]]; 
+ 		then
+ 		command find -name '*.xlsx'
+ 	elif [[ $scope = "text" || $scope = "txt" ]]; 
+ 		then
+ 		command find -name '*.txt'
+ 	elif [[ $scope = "word" || $scope = "docx" ]]; 
+ 		then
+ 		command find -name '*.docx'
+ 	elif [[ $scope = "pdf" ]]; 
+ 		then
+ 		command find -name '*.pdf'
+ 	else	
+		command find  -name $sc	
+	fi
+}
+
+function go(){
+	if [[ $1 = "desk" ]]; 
+		then
+		command cd ~/Desktop/$2
+		printf "Now you are in Desktop/$2"
+	elif [[ $1 = "home" ]]; 
+		then
+		command cd ~/$2
+		printf "Now you are in home/$2"
+	elif [[ $1 = "nav" ]]; 
+		then
+		command cd /c/$2
+		printf "Now you are in /c/$2"
+	else
+		command $1
+		printf "Now you are in $2"
+	fi
+}
+
+function desk(){
+	command cd ~/Desktop/$1
+	printf "Now you are in Desktop/$1"
+}
+
+function home(){
+	command cd ~/$1
+	printf "Now you are in Home/$1"
+}
+
+function nav(){
+	command cd /c/$1
+	printf "Now you	 are in /c"
+}
+
+function web(){
+	printf "Going... :  www.$1.com"
+	start www.$1.com
+}
+
+function facebook(){
+	printf "Time to socialize at facebook"
+	command start www.facebook.com
+}
+
+function twitter(){
+	printf "Time to socialize at twitter"
+	command start www.twitter.com
+}
+
+function youtube(){
+	printf "Time to watch some videos at youtube"
+	command start www.youtube.com
+}
+
+function translate(){
+	printf "Translating... : $1 from : $2 to : $3"
+	command start www.translate.google.com/#$2/$3/$1
+}
+
+function list(){
+	if [[ $1 = "desk" ]]; 
+		then
+		command ls ~/Desktop/$2
+	elif [[ $1 = "home" ]]; 
+		then
+		command ls ~/$2
+	elif [[ $1 = "nav" ]]; 
+		then
+		command ls ~/$2
+	else
+		command ls $1
+	fi
+}
