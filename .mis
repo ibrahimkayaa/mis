@@ -10,8 +10,8 @@ function up(){
 }
 
 function openmis(){
-	command cd ~/
-	command start mis/.mis
+	command cd ~/mis
+	command start .mis
 }
 
 function openbash(){
