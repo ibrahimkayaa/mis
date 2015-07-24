@@ -20,4 +20,34 @@ $ if [[ -f ~/mis/.mis ]];
      source ~/mis/.mis
   fi
 
+# Why 
+
+Some examples for understand ;
+
+' $ cd .. ' is classic bash command with .mis you only need to right ' $ up ' to go one file up
+
+' $ cd ~/Desktop ' you can use ' $ desk '
+
+So simple right , it is like talking english 
+
+' $ cd ~/ ' changes into ' $ home ' 
+
+Let's say you want to create a directory and want to go inside it 
+Before .mis :
+
+' $ mkdir new && cd $_ '
+
+After .mis :
+
+' $ cargo new ' I think you know what is cargo.. Create and folder and cargo me into it.
+
+You can use  ' desk ' key with cargo .
+
+' $ cargo desk new ' it is the new way of ' $ cd ~/Desktop && mkdir new && cd $_ '
+
+We have three key ;
+- desk : it is for ~/Desktop,
+- home : it is for ~/ ,
+- nav  : it is for /c/,
+
 
