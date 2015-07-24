@@ -1,4 +1,4 @@
-#.mis ( Make it Simple ) author ibrahim kaya 2015
+#.mis 0.0.1 ( Make it Simple ) author ibrahim kaya 2015
 
 function whatismis(){
 	printf "Make it Simple : An alternative and simple bash commands
@@ -11,7 +11,7 @@ function up(){
 
 function openmis(){
 	command cd ~/
-	command start .mis
+	command start mis/.mis
 }
 
 function openbash(){
